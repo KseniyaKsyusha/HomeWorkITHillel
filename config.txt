@@ -1,0 +1,4 @@
+FILE: ./Log.txt
+LEVEL: INFO
+MAX-SIZE: 500
+FORMAT: [%s][%s] Message:[%s]
