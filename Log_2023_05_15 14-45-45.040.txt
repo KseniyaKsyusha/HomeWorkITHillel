@@ -1,3 +1,0 @@
-[2023-05-15 14:45:45][INFO] Message:[info4]
-[2023-05-15 14:45:45][INFO] Message:[info5]
-[2023-05-15 14:45:45][INFO] Message:[info6]
