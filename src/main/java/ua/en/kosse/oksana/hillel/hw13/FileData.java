@@ -2,14 +2,14 @@ package ua.en.kosse.oksana.hillel.hw13;
 
 public class FileData implements Comparable<FileData> {
 
-    String pathFile;
-    String nameFile;
-    int sizeFileByte;
+    protected String pathFile;
+    protected String nameFile;
+    protected long fileSizeByte;
 
-    public FileData(String filePath, String fileName, int fileSizeByte) {
+    public FileData(String filePath, String fileName, long fileSizeByte) {
         this.pathFile = filePath;
         this.nameFile = fileName;
-        this.sizeFileByte = fileSizeByte;
+        this.fileSizeByte = fileSizeByte;
     }
 
     public String getPathFile() {
@@ -28,12 +28,12 @@ public class FileData implements Comparable<FileData> {
         this.nameFile = nameFile;
     }
 
-    public int getSizeFileByte() {
-        return sizeFileByte;
+    public long getFileSizeByte() {
+        return fileSizeByte;
     }
 
-    public void setSizeFileByte(int sizeFileByte) {
-        this.sizeFileByte = sizeFileByte;
+    public void setFileSizeByte(long fileSizeByte) {
+        this.fileSizeByte = fileSizeByte;
     }
 
     @Override
@@ -41,13 +41,13 @@ public class FileData implements Comparable<FileData> {
         return "\n\t FileData{" +
                 "filePath='" + pathFile + '\'' +
                 ", fileName='" + nameFile + '\'' +
-                ", fileSize=" + sizeFileByte +
+                ", fileSize=" + fileSizeByte +
                 '}';
     }
 
     @Override
     public int compareTo(FileData fileNew) {
-        return this.getSizeFileByte() - fileNew.getSizeFileByte();
+        return (int) (this.getFileSizeByte() - fileNew.getFileSizeByte());
 
     }
 }
