@@ -5,6 +5,7 @@ import ua.en.kosse.oksana.hillel.hw18.one.TypeProduct;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static ua.en.kosse.oksana.hillel.hw18.four.HomeWorkFunction.printProduct;
 import static ua.en.kosse.oksana.hillel.hw18.four.ProductDate.productDate;
@@ -22,17 +23,25 @@ public class HomeWorkFunction {
         //- ціна продукту не перевищує 75
         printProduct(productList);
         System.out.println("----------------------------");
-        takeProduct(productList, BOOK);
+        takeProduct(productList, BOOK).forEach(System.out::println);
+        System.out.printf("BOOK: %s", takeProductReduce(productList, BOOK));
     }
 
-    public static void takeProduct(List<Product> products, TypeProduct type) {
-        products.stream(). filter(booking -> booking.getType().equals(type)).
-                filter(booking -> booking.getDateShop().getYear()==LocalDate.now().getYear()).
-                filter(booking -> booking.getPrices() < 75).
-                forEach(System.out::println);
+    public static List<Product> takeProduct(List<Product> products, TypeProduct type) {
+        return products.stream().filter(booking -> booking.getType().equals(type)).
+                filter(booking -> booking.getDateShop().getYear() == LocalDate.now().getYear()).
+                filter(booking -> booking.getPrices() < 75).collect(Collectors.toList());
 
+    }
+
+    public static Integer takeProductReduce(List<Product> products, TypeProduct type) {
+        List<Product> myProduct = products.stream().filter(booking -> booking.getType().equals(type)).
+                filter(booking -> booking.getDateShop().getYear() == LocalDate.now().getYear()).
+                filter(booking -> booking.getPrices() < 75).collect(Collectors.toList());
+        return myProduct.stream().reduce(0,(x,y)->x + y.getPrices(),Integer::sum);
     }
 }
+
 
 
 
