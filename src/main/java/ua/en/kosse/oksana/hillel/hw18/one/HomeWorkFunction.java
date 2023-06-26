@@ -2,6 +2,7 @@ package ua.en.kosse.oksana.hillel.hw18.one;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static ua.en.kosse.oksana.hillel.hw18.one.TypeProduct.*;
 
@@ -13,7 +14,7 @@ public class HomeWorkFunction {
         // категорія яких еквівалентна “Book” та ціна більш ніж 250.
         printBook(productList);
         System.out.println("-------------------------------------");
-        filterBook(productList, BOOK);
+        filterBook(productList, BOOK).forEach(System.out::println) ;
     }
 
     public static List<Product> productBooks() {
@@ -30,10 +31,10 @@ public class HomeWorkFunction {
         return myProductArrayList;
     }
 
-    public static void filterBook(List<Product> products, TypeProduct type) {
-        products.stream().filter(booking -> booking.getType().equals(type)).
+    public static List<Product> filterBook(List<Product> products, TypeProduct type) {
+        return products.stream().filter(booking -> booking.getType().equals(type)).
                           filter(booking -> booking.getPrices() > 250).
-                          forEach(System.out::println);
+                          collect(Collectors.toList());
     }
 
     public static void printBook(List<Product> products) {
