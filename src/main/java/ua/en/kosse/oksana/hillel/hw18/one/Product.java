@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Product {
     private long id;
     private final TypeProduct type;
-    private final int prices;
+    private int prices;
     private boolean discount;
     private LocalDate dateShop;
 
@@ -49,8 +49,12 @@ public class Product {
         return dateShop;
     }
 
-    public long getId() {
-        return id;
+    public boolean isDiscount() {
+        return discount;
+    }
+
+    public void setPrices(int prices) {
+        this.prices = prices;
     }
 
     @Override
