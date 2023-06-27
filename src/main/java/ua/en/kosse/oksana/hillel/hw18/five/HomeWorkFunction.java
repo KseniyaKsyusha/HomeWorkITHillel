@@ -14,6 +14,7 @@ import static ua.en.kosse.oksana.hillel.hw18.one.TypeProduct.BOOK;
 
 public class HomeWorkFunction {
     private static List<Product> productList;
+    private static List<Product> myProduct;
 
     public static void main(String[] args) {
         productList = productDate();
@@ -24,20 +25,17 @@ public class HomeWorkFunction {
         printProduct(productList);
         System.out.println("----------------------------");
         takeProduct(productList, BOOK).forEach(System.out::println);
-        System.out.printf("BOOK: %s", takeProductReduce(productList, BOOK));
+        System.out.printf("BOOK: %s", takeProductReduce());
     }
 
     public static List<Product> takeProduct(List<Product> products, TypeProduct type) {
-        return products.stream().filter(booking -> booking.getType().equals(type)).
-                filter(booking -> booking.getDateShop().getYear() == LocalDate.now().getYear()).
-                filter(booking -> booking.getPrices() < 75).collect(Collectors.toList());
-
+         myProduct = products.stream().filter(booking -> booking.getType().equals(type) &&
+                booking.getDateShop().getYear() == LocalDate.now().getYear() && booking.getPrices() < 75).
+                collect(Collectors.toList());
+        return myProduct;
     }
 
-    public static Integer takeProductReduce(List<Product> products, TypeProduct type) {
-        List<Product> myProduct = products.stream().filter(booking -> booking.getType().equals(type)).
-                filter(booking -> booking.getDateShop().getYear() == LocalDate.now().getYear()).
-                filter(booking -> booking.getPrices() < 75).collect(Collectors.toList());
+    public static Integer takeProductReduce() {
         return myProduct.stream().reduce(0,(x,y)->x + y.getPrices(),Integer::sum);
     }
 }
