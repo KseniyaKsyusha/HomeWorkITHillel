@@ -20,12 +20,22 @@ public class HomeWorkFunction {
         printBook(productList);
         System.out.println("---------------------");
         buyProduct(productList, 10, BOOK).forEach(System.out::println);
+        System.out.println("---------------------");
+        buyProductList(productList,10,BOOK).forEach(System.out::println);
     }
 
     public static List<String> buyProduct(List<Product> products, int discount, TypeProduct type) {
         return products.stream().filter(booking -> booking.getType().equals(type))
                 .map(booking -> booking.getType() + " : " + booking.getPrices() + " => discount price = " +
                         (booking.getPrices() - booking.getPrices() * discount / 100))
+                .collect(Collectors.toList());
+
+    }
+    public static List<Product> buyProductList(List<Product> products, int discount, TypeProduct type) {
+        return products.stream().filter(booking -> booking.getType().equals(type) && booking.isDiscount())
+                .map(booking -> {
+                    booking.setPrices(booking.getPrices() - booking.getPrices() * discount / 100);
+                    return booking;})
                 .collect(Collectors.toList());
 
     }
