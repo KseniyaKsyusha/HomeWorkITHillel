@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "schedule_name_1",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 2,
+    "name": "schedule_name_2",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 3,
+    "name": "schedule_name_3",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 4,
+    "name": "schedule_name_4",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 5,
+    "name": "schedule_name_5",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 6,
+    "name": "schedule_name_6",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 7,
+    "name": "schedule_name_7",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 8,
+    "name": "schedule_name_8",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 9,
+    "name": "schedule_name_9",
+    "updatedAt": "2023-07-05 10:03:29"
+  },
+  {
+    "id": 10,
+    "name": "schedule_name_10",
+    "updatedAt": "2023-07-05 10:03:29"
+  }
+]

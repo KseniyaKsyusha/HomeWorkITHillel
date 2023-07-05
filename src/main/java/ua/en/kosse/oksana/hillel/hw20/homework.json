@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "homework_name_1",
+    "description": "homework_description_1"
+  },
+  {
+    "id": 2,
+    "name": "homework_name_2",
+    "description": "homework_description_2"
+  },
+  {
+    "id": 3,
+    "name": "homework_name_3",
+    "description": "homework_description_3"
+  },
+  {
+    "id": 4,
+    "name": "homework_name_4",
+    "description": "homework_description_4"
+  },
+  {
+    "id": 5,
+    "name": "homework_name_5",
+    "description": "homework_description_5"
+  },
+  {
+    "id": 6,
+    "name": "homework_name_6",
+    "description": "homework_description_6"
+  },
+  {
+    "id": 7,
+    "name": "homework_name_7",
+    "description": "homework_description_7"
+  },
+  {
+    "id": 8,
+    "name": "homework_name_8",
+    "description": "homework_description_8"
+  },
+  {
+    "id": 9,
+    "name": "homework_name_9",
+    "description": "homework_description_9"
+  },
+  {
+    "id": 10,
+    "name": "homework_name_10",
+    "description": "homework_description_10"
+  }
+]
