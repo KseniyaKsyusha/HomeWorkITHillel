@@ -10,14 +10,16 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `name` varchar(25) NOT NULL,
   `updatedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `homework_id` INT UNSIGNED,
+  `schedule_id` INT UNSIGNED,
  PRIMARY KEY (`id`),
- FOREIGN KEY (`homework_id`) REFERENCES `homework` (`id`)
+ FOREIGN KEY (`homework_id`) REFERENCES `homework` (`id`),
+ FOREIGN KEY (`schedule_id`) REFERENCES `schedule` (`id`)
 )
 
 CREATE TABLE IF NOT EXISTS `schedule` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(25) NOT NULL,
   `updatedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+ PRIMARY KEY (`id`)
 )
 

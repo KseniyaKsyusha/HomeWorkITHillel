@@ -34,9 +34,11 @@ public class MySQLDataBase {
                     + "  `name` varchar(25) NOT NULL,\r\n"
                     + "  `updatedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\r\n"
                     + "  `homework_id` INT UNSIGNED,\r\n"
+                    + "  `schedule_id` INT UNSIGNED,\r\n"
 
                     + " PRIMARY KEY (`id`),\r\n"
-                    + " FOREIGN KEY (`homework_id`) REFERENCES `homework` (`id`)\r\n"
+                    + " FOREIGN KEY (`homework_id`) REFERENCES `homework` (`id`),\r\n"
+                    + " FOREIGN KEY (`schedule_id`) REFERENCES `schedule` (`id`)\r\n"
                     + ")\r\n\r\n";
 
     static final String createScheduleTableQuery =
@@ -46,7 +48,8 @@ public class MySQLDataBase {
                     + "  `name` varchar(25) NOT NULL,\r\n"
                     + "  `updatedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\r\n"
 
-                    + "  PRIMARY KEY (`id`)\r\n"
+                    + " PRIMARY KEY (`id`)\r\n"
+
                     + ")\r\n\r\n";
 
 
@@ -67,10 +70,12 @@ public class MySQLDataBase {
         ) {
             statement.executeUpdate(createHomeworkTableQuery);
             System.out.println("Table Homework created successfully...");
-            statement.executeUpdate(createLessonTableQuery);
-            System.out.println("Table Lesson created successfully...");
+
             statement.executeUpdate(createScheduleTableQuery);
             System.out.println("Table Schedule created successfully...");
+
+            statement.executeUpdate(createLessonTableQuery);
+            System.out.println("Table Lesson created successfully...");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -83,7 +88,7 @@ public class MySQLDataBase {
         ) {
 
             String tableNameString = "homework";
-            for (int i = 0; i < 10; i++) {
+            for (int i = 1; i <= 10; i++) {
                 String sql =
                         "INSERT INTO " + tableNameString
                                 + " (`name`, `description`) VALUES ("
@@ -96,7 +101,7 @@ public class MySQLDataBase {
 
 
             tableNameString = "schedule";
-            for (int i = 0; i < 10; i++) {
+            for (int i = 1; i <= 10; i++) {
                 String sql =
                         "INSERT INTO " + tableNameString
                                 + " (`name`) VALUES ("
@@ -110,11 +115,12 @@ public class MySQLDataBase {
 
 
             tableNameString = "lesson";
-            for (int i = 0; i < 10; i++) {
+            for (int i = 1; i <= 20; i++) {
                 String sql =
                         "INSERT INTO " + tableNameString
-                                + " (`name`, `homework_id`) VALUES ("
+                                + " (`name`, `homework_id`,`schedule_id`) VALUES ("
                                 + "\"" + tableNameString + "_name_" + i + "\", "
+                                + rand.nextInt(1, 10)+", "
                                 + rand.nextInt(1, 10)
                                 + ")";
                 statement.executeUpdate(sql);
