@@ -168,17 +168,13 @@ public class MySQLDataBase {
 
     public static void PrintAllHomeWorksByScheduleName(
             String scheduleName) {
-        String query = "SELECT \r\n"
-                + "	   s.name, \r\n"
-                + "    h.name, \r\n"
-                + "    h.description\r\n"
-                + "FROM \r\n"
-                + "	   learningprocess.schedule s, 	\r\n"
-                + "    learningprocess.scheduled_lessons sl, \r\n"
-                + "    learningprocess.lesson l, \r\n"
-                + "    learningprocess.homework h\r\n"
-                + "WHERE \r\n"
-                + "	   s.name = '" + scheduleName + "' \r\n"
+        String query = "SELECT  s.name, h.name, h.description  \r\n"
+                + "FROM  \r\n"
+                + NAME_DATABASE+".schedule s, \r\n"
+                + NAME_DATABASE+".scheduled_lessons sl, \r\n"
+                + NAME_DATABASE+".lesson l, \r\n"
+                + NAME_DATABASE+".homework h  \r\n"
+                + "WHERE  s.name = '" + scheduleName + "' \r\n"
                 + "    AND s.id = sl.schedule_id \r\n"
                 + "    AND sl.lesson_id = l.id \r\n"
                 + "    AND l.homework_id = h.id;";
