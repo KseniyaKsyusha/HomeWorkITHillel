@@ -11,13 +11,39 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <javafaker.version>1.0.2</javafaker.version>
+        <org.apache.commons.version>3.12.0</org.apache.commons.version>
+        <mysql-connector-j.version>8.0.33</mysql-connector-j.version>
+<!--        <org.projectlombok.version>1.18.28</org.projectlombok.version>-->
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
+            <version>${javafaker.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${org.apache.commons.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${mysql-connector-j.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--            <version>${org.projectlombok.version}</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+
     </dependencies>
+
 </project>
