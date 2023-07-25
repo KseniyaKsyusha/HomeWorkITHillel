@@ -8,9 +8,9 @@ public class HomeWorkFabric {
     public static void main(String[] args) {
         FurnitureFactory factory = new FurnitureFactory();
 
-        Furniture table = factory.getDoughnut(FurnitureTypes.TABLE);
-        Furniture chair = factory.getDoughnut(FurnitureTypes.CHAIR);
-        Furniture sofa  = factory.getDoughnut(FurnitureTypes.SOFA);
+        Furniture table = factory.getFurniture(FurnitureTypes.TABLE);
+        Furniture chair = factory.getFurniture(FurnitureTypes.CHAIR);
+        Furniture sofa  = factory.getFurniture(FurnitureTypes.SOFA);
 
         table.doFurniture();
         chair.doFurniture();
@@ -33,6 +33,6 @@ public class HomeWorkFabric {
         Random random = new Random();
         FurnitureTypes type = FurnitureTypes.values()[random.nextInt(FurnitureTypes.values().length)];
 
-        return(factory.getDoughnut(type));
+        return(factory.getFurniture(type));
     }
 }
