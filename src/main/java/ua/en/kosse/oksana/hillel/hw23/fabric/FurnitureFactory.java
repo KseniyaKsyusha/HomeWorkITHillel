@@ -6,7 +6,7 @@ import ua.en.kosse.oksana.hillel.hw23.fabric.itemFurniture.SofaFurniture;
 import ua.en.kosse.oksana.hillel.hw23.fabric.itemFurniture.TableFurniture;
 
 public class FurnitureFactory {
-    public Furniture getDoughnut(FurnitureTypes type) {
+    public Furniture getFurniture(FurnitureTypes type) {
         Furniture toReturn = null;
         switch (type) {
             case TABLE:
