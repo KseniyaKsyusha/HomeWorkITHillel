@@ -11,13 +11,44 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <javafaker.version>1.0.2</javafaker.version>
+        <org.apache.commons.version>3.12.0</org.apache.commons.version>
+        <junit>5.10.1</junit>
+
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.13.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
+            <version>${javafaker.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${org.apache.commons.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
+
 </project>
